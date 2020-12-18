@@ -3,13 +3,13 @@ package tests;
 
 
 import java.io.IOException;
+import java.util.jar.JarException;
 
 import org.json.simple.parser.ParseException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.google.gson.JsonIOException;
-import com.google.gson.JsonSyntaxException;
+
 
 import data.JsonDataReader;
 import pages.HomePage;
@@ -23,7 +23,7 @@ public class UserRegistrationTestWithDDTAndJSON extends TestBase {
 
 
 	@Test(priority=1)
-	public  void userRegisterSuccessfully() throws InterruptedException, JsonIOException, JsonSyntaxException, IOException, ParseException {
+	public  void userRegisterSuccessfully() throws InterruptedException, JarException, JarException, IOException, ParseException {
 		JsonDataReader jsonReader=new JsonDataReader();
 		jsonReader.JsonReader();
 

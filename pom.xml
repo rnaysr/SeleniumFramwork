@@ -114,6 +114,14 @@
 
 		</dependency>
 
+		<dependency>
+			<groupId>com.codeborne</groupId>
+			<artifactId>phantomjsdriver</artifactId>
+			<version>1.4.4</version>
+		</dependency>
+
+
+
 	</dependencies>
 
 
