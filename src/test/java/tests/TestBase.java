@@ -1,7 +1,6 @@
 package tests;
 
 import java.io.IOException;
-import java.lang.ref.PhantomReference;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
