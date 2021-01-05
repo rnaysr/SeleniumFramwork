@@ -14,19 +14,35 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+import data.LoadProperties;
 import utilities.Helper;
 
 public class TestBase2 {
-	public static 
-	String BaseURL="https://demo.nopcommerce.com";
+
+	//soucelabs configratuion
+	public static final String USERNAME=LoadProperties.soucelabsData.getProperty("username");
+	public static final String ACCESS_KEY=LoadProperties.soucelabsData.getProperty("accesskey");
+	public static final String SouceURl="http://"+USERNAME+":"+ACCESS_KEY+ LoadProperties.soucelabsData.getProperty("seleniumURL");
+
+
+	public static String BaseURL="https://demo.nopcommerce.com";
+
 	protected ThreadLocal<RemoteWebDriver> driver=null;
+
 	@BeforeClass
 	@Parameters(value= {"browser"})
 	public void setUp(@Optional("chrome")String browser) throws MalformedURLException {
 		driver=new ThreadLocal<RemoteWebDriver>();
+
 		DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setCapability("browserName", browser);
-		driver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), caps));
+
+		//selenium grid local
+		//driver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), caps));
+
+		// run on soucelabs
+		driver.set(new RemoteWebDriver(new URL(SouceURl), caps));
+
 		getDriver().navigate().to(BaseURL);
 	}
 	public WebDriver getDriver() {

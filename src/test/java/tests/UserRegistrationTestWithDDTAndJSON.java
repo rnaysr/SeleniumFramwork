@@ -9,8 +9,6 @@ import org.json.simple.parser.ParseException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
-
 import data.JsonDataReader;
 import pages.HomePage;
 import pages.LoginPage;
