@@ -11,6 +11,11 @@ public class LoadProperties
 
 	//class to load properties [ userdata.properties ] file   from the  properties package in the main 
 	public static Properties userData= loadProperties(System.getProperty("user.dir")+"\\src\\main\\java\\properties\\userdata.properties");
+
+	//load soucelabs account data
+	public static Properties soucelabsData= loadProperties(System.getProperty("user.dir")+"\\src\\main\\java\\properties\\soucelabsUser.properties");
+
+
 	private static Properties loadProperties(String path) 
 	{
 		Properties pro= new Properties();
